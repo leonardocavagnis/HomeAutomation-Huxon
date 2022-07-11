@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="view.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background-color:#e7fbf5;">
+
+	<div class="w3-row w3-center">
+		<h1>Home Automation with Huxon and ST</h1> 
+	</div>
+	
+	<div class="w3-cell-row">
+	  <div class="w3-cell w3-container w3-border">
+		<h3 class="w3-center"><i class="fa fa-cog" style="font-size:24px"></i> Settings</h3>
+		
+		<div class="w3-container">
+			<table class="w3-table">
+				<tr>
+				  <td>Heating management: </td>
+				  <td><span id="heatman_status_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+				</tr>
+				<tr>
+				  <td>Alarm management:</td>
+				  <td><span id="alarmman_status_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="w3-container w3-center">
+			<a href="https://sensorplatform.huxelerate.it/deploymenthook?token=..." target="_blank" class="w3-button w3-round w3-amber">Heating</a>
+			<a href="https://sensorplatform.huxelerate.it/deploymenthook?token=..." target="_blank" class="w3-button w3-round w3-orange">Alarm</a>
+			<a href="https://sensorplatform.huxelerate.it/deploymenthook?token=..." target="_blank" class="w3-button w3-round w3-deep-orange">Heating&Alarm</a>
+			<a href="https://sensorplatform.huxelerate.it/deploymenthook?token=..." target="_blank" class="w3-button w3-round w3-dark-gray">Disable all</a>
+		</div>
+			
+	  </div>
+	  <div class="w3-cell w3-container w3-border">
+		<h3 class="w3-center"><i class="fa fa-home" style="font-size:24px"></i> Home ambient monitor</h3>
+		
+		<div class="w3-container">
+			<table class="w3-table">
+				<tr>
+				  <td>Temperature [°C]: </td>
+				  <td><p id="temp_id">N/A</p></td>
+				</tr>
+				<tr>
+				  <td>Pressure [mPa]:</td>
+				  <td><p id="hum_id">N/A</p></td>
+				</tr>
+				<tr>
+				  <td>Last update time:</td>
+				  <td><p id="time_id">N/A</p></td>
+				</tr>
+			</table>
+		</div>
+			
+	  </div>
+	</div>
+	
+	<div class="w3-cell-row">
+		<div class="w3-cell w3-container w3-border">
+			<h3 class="w3-center"><i class="fa fa-cutlery" style="font-size:24px"></i> Living Room</h3>			
+			<div class="w3-container">
+				<table class="w3-table">
+					<tr>
+					  <td>Room occupacy status: </td>
+					  <td><span id="lr_occupacy_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+					</tr>
+					<tr>
+					  <td>Last update time:</td>
+					  <td><p id="lr_time_id">N/A</p></td>
+					</tr>
+					<tr>
+					  <td>Window status:</td>
+					  <td><span id="wlr_status_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+					</tr>
+					<tr>
+					  <td>Last update time:</td>
+					  <td><p id="lr_wtime_id">N/A</p></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="w3-cell w3-container w3-border">
+			<h3 class="w3-center"><i class="fa fa-bed" style="font-size:24px"></i> Bed Room</h3>
+			<div class="w3-container">
+				<table class="w3-table">
+					<tr>
+					  <td>Room occupacy status: </td>
+					  <td><span id="br_occupacy_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+					</tr>
+					<tr>
+					  <td>Last update time:</td>
+					  <td><p id="br_time_id">N/A</p></td>
+					</tr>
+					<tr>
+					  <td>Window status:</td>
+					  <td><span id="wbr_status_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+					</tr>
+					<tr>
+					  <td>Last update time:</td>
+					  <td><p id="br_wtime_id">N/A</p></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="w3-cell w3-container w3-border">
+			<h3 class="w3-center"><i class="fa fa-warning" style="font-size:24px"></i> Alarm</h3>
+			<div class="w3-container">
+				<table class="w3-table">
+					<tr>
+					  <td>Status: </td>
+					  <td><span id="alarm_status_id" class="w3-tag w3-small w3-padding w3-round-large w3-grey w3-center">N/A</span></td>
+					</tr>
+					<tr>
+					  <td>Entrance - last tampering time: </td>
+					  <td><p id="ed_tamper_id">N/A</p></td>
+					</tr>
+					<tr>
+					  <td>Living room - last tampering time: </td>
+					  <td><p id="lr_tamper_id">N/A</p></td>
+					</tr>
+					<tr>
+					  <td>Bed room - last tampering time: </td>
+					  <td><p id="br_tamper_id">N/A</p></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
