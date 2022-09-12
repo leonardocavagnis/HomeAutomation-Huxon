@@ -4,7 +4,7 @@
 ## About The Project
 Home automation with Huxon platform and STM32 ecosystem
 
-Tutorial: 
+Tutorial: https://leonardocavagnis.medium.com/home-automation-diy-with-huxon-3e71b19ea464
 
 <!-- SETUP -->
 ## Setup
